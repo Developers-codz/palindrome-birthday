@@ -114,13 +114,13 @@ function getNextPalindromeDate(date) {
   return [ctr, nextDate];
 }
 
-var date = {
-  day: 28,
-  month: 2,
-  year: 2020
-};
+// var date = {
+//   day: 12,
+//   month: 11,
+//   year: 2021
+// };
 
-console.log(getNextPalindromeDate(date));
+// console.log(getNextPalindromeDate(date));
 
 const bdayInput = document.querySelector("#dob");
 const showBtn = document.querySelector("#check-btn");
@@ -131,6 +131,7 @@ function clickHandler(e) {
 
   if (bdayString !== '') {
     var date = bdayString.split('-');
+    // console.log(date);
     var yyyy = date[0];
     var mm = date[1];
     var dd = date[2];
@@ -140,26 +141,22 @@ function clickHandler(e) {
       month: Number(mm),
       year: Number(yyyy)
     };
+    
 
-    var dateStr = convertDateToStr(date);
-    var list = checkPalindromeForAllDateFormats(dateStr);
-    var isPalindrome = false;
-
-    for (let i = 0; i < list.length; i++) {
-      if (list[i]) {
-        isPalindrome = true;
-        break;
-      }
+    // var dateStr = convertDateToStr(date);
+    var list = checkPalindromeForAllDateFormats(date);
+    console.log(list);
+    if(list){
+      resultDiv.innerText = "your birthday is palindrome";
     }
-
-    if (!isPalindrome) {
-      const [ctr1, nextDate] = getNextPalindromeDate(date);
-        resultDiv.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.`;
-      
-
-    } else {
-      resultDiv.innerText = 'Yay! Your birthday is palindrome!';
+    else{
+      var [ctr , nextDate] = getNextPalindromeDate(date);
+      resultDiv.innerText = `the next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}.You missed it by ${ctr} Days`
     }
+    
+
+
+    
   }
 }
 
