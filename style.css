@@ -1,6 +1,7 @@
 body{
     background-color: black;
     color:white;
+    
   }
   .container{
     text-align: center;
@@ -8,4 +9,13 @@ body{
   }
   #output{
     margin:2rem 0rem;
+  }
+  input{
+    padding:0.2rem 0.8rem;
+  }
+  .btn{
+    padding:.3rem .6rem;
+    display:block;
+   margin:1rem  auto;
+
   }
