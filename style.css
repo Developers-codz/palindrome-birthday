@@ -19,3 +19,20 @@ body{
    margin:1rem  auto;
 
   }
+  /* footer */
+  .footer-div{
+   text-align: center;
+    position: fixed;
+    bottom: 0%;
+    left:0;
+    width: 100%;
+
+}
+.footer-div a{
+    font-size: x-large;
+    padding: .5rem 1rem;
+}
+.footer-div div{
+  color:rgb(99, 52, 175);
+  margin: 1rem 0rem;
+}
